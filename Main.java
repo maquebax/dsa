@@ -2,6 +2,7 @@ package dsa;
 
 import dsa.arrays.CompressString;
 import dsa.hashmapset.DifferenceOfTwoArrays;
+import dsa.hashmapset.EqualRowNColPairs;
 import dsa.hashmapset.StringCloseness;
 import dsa.hashmapset.UniqueOccurrences;
 import dsa.prefixsum.HighestAltitude;
@@ -10,6 +11,8 @@ import dsa.slidingwindow.LongestSubarrayOf1s;
 import dsa.slidingwindow.MaxAverageSubArray;
 import dsa.slidingwindow.MaxConsecutiveOnes;
 import dsa.slidingwindow.MaxVowelsInSubstring;
+import dsa.stack.AsteriodCollision;
+import dsa.stack.RemovingStarsFromString;
 import dsa.twopointers.ContainerWithMostWater;
 import dsa.twopointers.IsSubsequence;
 import dsa.twopointers.MaxNumberOfKSumPairs;
@@ -42,6 +45,9 @@ public class Main {
         // 724
         // findPivotIndex();
 
+        //735 
+        asteriodCollision();
+
         // 1004
         // maxConsecutiveOnes();
 
@@ -55,7 +61,7 @@ public class Main {
         // longestSubarrayOf1s();
 
         // 1657
-        determineStringCloseness();
+        //determineStringCloseness();
 
         // 1679
         // maxNoOfKSumPairs();
@@ -65,10 +71,43 @@ public class Main {
 
         // 2215
         //differenceOfTwoArrays();
+
+        //2352.
+        // equal row and col pairs
+       // equalRowNColPairs();
+
+       //2390
+      // removeStarsFromString();
     }
 
    
-   
+  
+
+
+
+        /**
+         * 735. Asteriod Collision
+         */
+     static void asteriodCollision() {
+        int arr1[] = {5,10,-5};
+        int arr2[] = {10,2,-3};
+        int arr3[]=  {3,5,-6,2,-1,4};
+        int arr4[]= {8,-8};
+        int arr5[] = {-2,-2,-1,-2};
+        int arr6[] = {-2,1,-2,-1};
+        int arr7[] = {-2,1,1,-1};
+        int arr8[] = {7,-1,2,-3,-6,-6,-6,4,10,2};
+        // new AsteriodCollision().execute(arr1,arr2,arr3,arr4,arr5,arr6,arr7,arr8);
+        new AsteriodCollision().execute(arr8);
+    
+    }
+
+
+
+
+
+
+
 
     /**
      * 11. Container With Most Water
@@ -223,4 +262,22 @@ public class Main {
         new DifferenceOfTwoArrays().execute(nums3, nums4);
     }
 
+    /**
+     * 2352. Equal Row and Col Pairs
+     */
+
+    static void equalRowNColPairs(){
+        int[][] grid = {{3,2,1},{1,7,6},{2,7,7}};
+        new EqualRowNColPairs().execute(grid);
+    
+    }
+
+     /**
+    * 2390. Removing stars from string
+    */
+
+    private static void removeStarsFromString() {
+        // TODO Auto-generated method stub
+        new RemovingStarsFromString().execute("leet**cod*e");
+    }
 }
