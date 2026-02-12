@@ -12,6 +12,7 @@ import dsa.slidingwindow.MaxAverageSubArray;
 import dsa.slidingwindow.MaxConsecutiveOnes;
 import dsa.slidingwindow.MaxVowelsInSubstring;
 import dsa.stack.AsteriodCollision;
+import dsa.stack.DecodeString;
 import dsa.stack.RemovingStarsFromString;
 import dsa.twopointers.ContainerWithMostWater;
 import dsa.twopointers.IsSubsequence;
@@ -36,6 +37,8 @@ public class Main {
         // 392
         // isSubsequence();
 
+        // 394
+        decodeString();
         // 443
         // //stringCompression();
 
@@ -45,13 +48,13 @@ public class Main {
         // 724
         // findPivotIndex();
 
-        //735 
-        asteriodCollision();
+        // 735
+        // asteriodCollision();
 
         // 1004
         // maxConsecutiveOnes();
 
-        //1207
+        // 1207
         // findUniqueOccurances();
 
         // 1456
@@ -61,7 +64,7 @@ public class Main {
         // longestSubarrayOf1s();
 
         // 1657
-        //determineStringCloseness();
+        // determineStringCloseness();
 
         // 1679
         // maxNoOfKSumPairs();
@@ -70,44 +73,26 @@ public class Main {
         // highestAltitude();
 
         // 2215
-        //differenceOfTwoArrays();
+        // differenceOfTwoArrays();
 
-        //2352.
+        // 2352.
         // equal row and col pairs
-       // equalRowNColPairs();
+        // equalRowNColPairs();
 
-       //2390
-      // removeStarsFromString();
+        // 2390
+        // removeStarsFromString();
     }
 
-   
-  
-
-
-
-        /**
-         * 735. Asteriod Collision
-         */
-     static void asteriodCollision() {
-        int arr1[] = {5,10,-5};
-        int arr2[] = {10,2,-3};
-        int arr3[]=  {3,5,-6,2,-1,4};
-        int arr4[]= {8,-8};
-        int arr5[] = {-2,-2,-1,-2};
-        int arr6[] = {-2,1,-2,-1};
-        int arr7[] = {-2,1,1,-1};
-        int arr8[] = {7,-1,2,-3,-6,-6,-6,4,10,2};
-        // new AsteriodCollision().execute(arr1,arr2,arr3,arr4,arr5,arr6,arr7,arr8);
-        new AsteriodCollision().execute(arr8);
-    
+    /**
+     *  394. decode the encoded string
+     */
+     static void decodeString() {
+        String in1 = "3[a]2[bc]", in2= "3[a2[c]]",in3="2[abc]3[cd]ef",in4="3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
+        Map<String,String> expectedOutMap = new HashMap<>();
+        expectedOutMap.put(in4, "zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef");
+        new DecodeString().execute(in4);
+        System.out.println("success :" +new DecodeString().decodeString(in4).equals(expectedOutMap.get(in4)));
     }
-
-
-
-
-
-
-
 
     /**
      * 11. Container With Most Water
@@ -172,11 +157,29 @@ public class Main {
         new MaxAverageSubArray().execute(nums2, k2);
     }
 
+    // 724. find pivot index
     static void findPivotIndex() {
         int[] nums1 = { 1, 7, 3, 6, 5, 6 };
         int[] nums2 = { 1, 2, 3 };
         int[] nums3 = { 2, 1, -1 };
         new PivotIndex().execute(nums1, nums2, nums3);
+    }
+
+    /**
+     * 735. Asteriod Collision
+     */
+    static void asteriodCollision() {
+        int arr1[] = { 5, 10, -5 };
+        int arr2[] = { 10, 2, -3 };
+        int arr3[] = { 3, 5, -6, 2, -1, 4 };
+        int arr4[] = { 8, -8 };
+        int arr5[] = { -2, -2, -1, -2 };
+        int arr6[] = { -2, 1, -2, -1 };
+        int arr7[] = { -2, 1, 1, -1 };
+        int arr8[] = { 7, -1, 2, -3, -6, -6, -6, 4, 10, 2 };
+        // new AsteriodCollision().execute(arr1,arr2,arr3,arr4,arr5,arr6,arr7,arr8);
+        new AsteriodCollision().execute(arr8);
+
     }
 
     /**
@@ -189,13 +192,13 @@ public class Main {
     }
 
     /**
-    * 1207. find unique occurances.
-    */
+     * 1207. find unique occurances.
+     */
     static void findUniqueOccurances() {
         // TODO Auto-generated method stub
-        int arr1[] = {1,2,2,1,1,3};
-        int arr2[] = {1,2};
-        new UniqueOccurrences().execute(arr1,arr2);
+        int arr1[] = { 1, 2, 2, 1, 1, 3 };
+        int arr2[] = { 1, 2 };
+        new UniqueOccurrences().execute(arr1, arr2);
     }
 
     /**
@@ -222,11 +225,12 @@ public class Main {
      * 1657 String Closeness
      */
 
-    static void determineStringCloseness(){
+    static void determineStringCloseness() {
         String st1 = "a";
         String st2 = "aa";
-        new StringCloseness().execute(st1,st2);
+        new StringCloseness().execute(st1, st2);
     }
+
     /**
      * 1679 Max K Sum Pairs
      */
@@ -266,15 +270,15 @@ public class Main {
      * 2352. Equal Row and Col Pairs
      */
 
-    static void equalRowNColPairs(){
-        int[][] grid = {{3,2,1},{1,7,6},{2,7,7}};
+    static void equalRowNColPairs() {
+        int[][] grid = { { 3, 2, 1 }, { 1, 7, 6 }, { 2, 7, 7 } };
         new EqualRowNColPairs().execute(grid);
-    
+
     }
 
-     /**
-    * 2390. Removing stars from string
-    */
+    /**
+     * 2390. Removing stars from string
+     */
 
     private static void removeStarsFromString() {
         // TODO Auto-generated method stub
