@@ -7,6 +7,7 @@ import dsa.hashmapset.StringCloseness;
 import dsa.hashmapset.UniqueOccurrences;
 import dsa.prefixsum.HighestAltitude;
 import dsa.prefixsum.PivotIndex;
+import dsa.queue.RecentCounter;
 import dsa.slidingwindow.LongestSubarrayOf1s;
 import dsa.slidingwindow.MaxAverageSubArray;
 import dsa.slidingwindow.MaxConsecutiveOnes;
@@ -51,6 +52,8 @@ public class Main {
         // 735
         // asteriodCollision();
 
+        // 933
+        recentCounter();
         // 1004
         // maxConsecutiveOnes();
 
@@ -83,16 +86,18 @@ public class Main {
         // removeStarsFromString();
     }
 
-    /**
-     *  394. decode the encoded string
-     */
-     static void decodeString() {
-        String in1 = "3[a]2[bc]", in2= "3[a2[c]]",in3="2[abc]3[cd]ef",in4="3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
-        Map<String,String> expectedOutMap = new HashMap<>();
-        expectedOutMap.put(in4, "zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef");
-        new DecodeString().execute(in4);
-        System.out.println("success :" +new DecodeString().decodeString(in4).equals(expectedOutMap.get(in4)));
+    
+
+     static void recentCounter() {
+        // TODO Auto-generated method stub
+        RecentCounter counter = new RecentCounter();
+        System.out.println("ping 1 :"+counter.ping(1));
+        System.out.println("ping 100 :"+counter.ping(100));
+        System.out.println("ping 3001 :"+counter.ping(3001));
+        System.out.println("ping 3002 :"+counter.ping(3002));
     }
+
+
 
     /**
      * 11. Container With Most Water
@@ -133,6 +138,18 @@ public class Main {
 
         new IsSubsequence().execute(input);
     }
+
+    /**
+     *  394. decode the encoded string
+     */
+     static void decodeString() {
+        String in1 = "3[a]2[bc]", in2= "3[a2[c]]",in3="2[abc]3[cd]ef",in4="3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
+        Map<String,String> expectedOutMap = new HashMap<>();
+        expectedOutMap.put(in4, "zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef");
+        new DecodeString().execute(in4);
+        System.out.println("success :" +new DecodeString().decodeString(in4).equals(expectedOutMap.get(in4)));
+    }
+
 
     /**
      * 443 string compression
